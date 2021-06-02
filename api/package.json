@@ -1,0 +1,24 @@
+{
+  "name": "Radar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon --trace-warnings ./server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "circular-json": "^0.5.9",
+    "cors": "^2.8.5",
+    "csv-string": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "install": "^0.13.0",
+    "npm": "^7.15.0"
+  }
+}

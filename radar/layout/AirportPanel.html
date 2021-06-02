@@ -1,0 +1,60 @@
+<div class="airport-popup">
+    <button type="button" class="btn-close airport-close" aria-label="Close" style="float: right; padding-top: 2.5em; padding-right: 0.5em;" onclick='closeAirportPanel();'></button>
+    <h2>{{airport}}</h2>
+    <dl class="row">
+        <dt class="col-sm-3">ICAO Code</dt>
+        <dd class="col-sm-9 oaci">{{icao}}</dd>
+        <dt class="col-sm-3">Elevation</dt>
+        <dd class="col-sm-9 elevation">{{elevation}} ft.</dd>
+        <dt class="col-sm-3">Country</dt>
+        <dd class="col-sm-9 country">{{country}}</dd>
+        <dt class="col-sm-3">Municipality</dt>
+        <dd class="col-sm-9 municipality">{{municipality}}</dd>
+        <dt class="col-sm-3">Longitude / Latitude</dt>
+        <dd class="col-sm-9 longitude latitude"><a href="#" id="zoomAirport" onclick="zoomOnPos({{longitude}}, {{latitude}}, 10)">{{longitude}} / {{latitude}}</a></dd>
+        <dt class="col-sm-3">Live ATC</dt>
+        <dd class="col-sm-9 atc"><a href="{{atc_href}}" target="_blank">{{live_atc}}</a></dd>
+    </dl>
+
+    <h2>Metar</h2>
+    <div class="metar-loading">
+        <dl class="row">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </dl>
+    </div>
+    <div class="metar-hidden">
+        <div class="row">
+            <div class="col text-center">
+                <p class="h5 altimeter">{{altimeter}} {{altimeter_unit}}</p>
+            </div>
+            <div class="col text-center">
+                <p class="h5 temperature">{{temperature}}°C</p>
+            </div>
+            <div class="col text-center">
+                <p class="h5 wind-token">{{direction}}/{{speed}}kts</p>
+                <img src="img/wind-arrow.png" class="img-wind-arrow">
+            </div>
+        </div>
+        <dl class="row">
+            <dt class="col-sm-3">Latest Metar</dt>
+            <dd class="col-sm-9 metar-token">{{metar}}</dd>
+        </dl>
+    </div>
+
+    <h2>TAF</h2>
+    <div class="taf-loading">
+        <dl class="row">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </dl>
+    </div>
+    <div class="taf-hidden">
+        <dl class="row">
+            <dt class="col-sm-3">Latest Taf</dt>
+            <dd class="col-sm-9 taf-token">{{taf}}</dd>
+        </dl>
+    </div>
+</div>
