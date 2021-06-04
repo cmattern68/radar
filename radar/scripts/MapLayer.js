@@ -126,7 +126,7 @@ addNewAirportPin = (country) => {
 }
 
 loadCountryAirport = () => {
-	if (map.zoom >= 6) {
+	if (map.zoom >= 6 && !planeCheck()) {
 		const pos = (map.getCenter()).transform('EPSG:3857', 'EPSG:4326');
 		$.get("http://localhost:3030/coordinate/" + pos.lon + "/" + pos.lat, function(country, status){
 			if (country.countryCode !== undefined) {
@@ -139,7 +139,7 @@ loadCountryAirport = () => {
 }
 
 verifyCountryAirport = () => {
-	if (map.zoom >= 6) {
+	if (map.zoom >= 6 && !planeCheck()) {
 		const pos = (map.getCenter()).transform('EPSG:3857', 'EPSG:4326');
 		$.get("http://localhost:3030/coordinate/" + pos.lon + "/" + pos.lat, function(country, status){
 			if (country.countryCode !== undefined && loadedCountry !== "" && loadedCountry !== country.countryCode) {
@@ -147,6 +147,8 @@ verifyCountryAirport = () => {
 				addNewAirportPin(country);
 			}
 		});
+	} else if ((map.zoom < 6 || planeCheck()) && (loadedCountry !== "" || countryAirport !== {})){
+		removeOldAirportPin();
 	}
 }
 

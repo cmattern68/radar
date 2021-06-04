@@ -1,24 +1,33 @@
 <div class="search-bar">
-    <form method="get" name="filter-search">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-        </div>
-    </form>
+    <div class="input-group">
+        <input type="text" class="form-control search-input" placeholder="Search..." aria-label="Search..." aria-describedby="button-search">
+        <button class="btn btn-primary" type="button" id="button-search" onclick="onSearch();"><i class="fas fa-search"></i></button>
+    </div>
 </div>
 <div class="radar-filter">
     <form method="post" name="filter-on-off">
         <div class="form-check form-switch">
             <input class="form-check-input restricted-check" type="checkbox" id="switchRestrictedArea" name="switchRestrictedArea" onclick="restrictedCheck()" checked>
-            <label class="form-check-label restricted-label" for="switchRestrictedArea">Toggle Restricted Area On</label>
+            <label class="form-check-label restricted-label" for="switchRestrictedArea">Toggle Restricted Area - On</label>
         </div>
         <div class="form-check form-switch">
             <input class="form-check-input airport-check" type="checkbox" id="switchAirport" name="switchAirport" onclick="airportCheck()" checked>
-            <label class="form-check-label airport-label" for="switchAirport">Toggle Airport On</label>
+            <label class="form-check-label airport-label" for="switchAirport">Toggle Airport - On</label>
         </div>
         <div class="form-check form-switch">
             <input class="form-check-input plane-check" type="checkbox" id="switchPlane" name="switchPlane" onclick="planeCheck()">
-            <label class="form-check-label plane-label" for="switchPlane">Toggle Plane Off</label>
+            <label class="form-check-label plane-label" for="switchPlane">Toggle Plane - Off</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input emergency-check" type="checkbox" id="switchEmergency" name="switchPlane" onclick="emergencyCheck()">
+            <label class="form-check-label emergency-label" for="switchEmergency">Toggle Emergency - Off</label>
         </div>
     </form>
 </div>
+<script type="text/javascript">
+	$(".search-input").keyup(function(event) {
+		if (event.key === "Enter" || event.keyCode === 13) {
+          onSearch();
+        }
+	});
+</script>

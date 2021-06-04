@@ -2,18 +2,22 @@ $(document).ready(function() {
 	pollEvent();
 });
 
+sanitize = (str) => {
+	str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim,"");
+	return str.trim();
+}
 
 restrictedCheck = () => {
 	if ($('.restricted-check').is(':checked')) {
 		restrictedLayer.forEach(layer => {
 			layer.display(true);
 		});
-		$('.restricted-label').text('Toggle Restricted Area On');
+		$('.restricted-label').text('Toggle Restricted Area - On');
 	} else {
 		restrictedLayer.forEach(layer => {
 			layer.display(false);
 		});
-		$('.restricted-label').text('Toggle Restricted Area Off');
+		$('.restricted-label').text('Toggle Restricted Area - Off');
 	}
 }
 
@@ -25,7 +29,7 @@ airportCheck = () => {
 		for (let [key, layer] of Object.entries(countryAirport)) {
 			layer.display(true);
 		}
-		$('.airport-label').text('Toggle Airport On');
+		$('.airport-label').text('Toggle Airport - On');
 	} else {
 		for (let [key, layer] of Object.entries(AirportsLayers)) {
 			layer.display(false);
@@ -33,7 +37,7 @@ airportCheck = () => {
 		for (let [key, layer] of Object.entries(countryAirport)) {
 			layer.display(false);
 		}
-		$('.airport-label').text('Toggle Airport Off');
+		$('.airport-label').text('Toggle Airport - Off');
 	}
 }
 
@@ -42,12 +46,20 @@ planeCheck = () => {
 		for (let [key, layer] of Object.entries(PlanesLayers)) {
 			layer.display(true);
 		}
-		$('.plane-label').text('Toggle Plane On');
+		$('.plane-label').text('Toggle Plane - On');
 	} else {
 		for (let [key, layer] of Object.entries(PlanesLayers)) {
 			layer.display(false);
 		}
-		$('.plane-label').text('Toggle Plane Off');
+		$('.plane-label').text('Toggle Plane - Off');
+	}
+}
+
+emergencyCheck = () => {
+	if ($('.emergency-check').is(':checked')) {
+		$('.emergency-label').text('Toggle Emergency - On');
+	} else {
+		$('.emergency-label').text('Toggle Emergency - Off');
 	}
 }
 

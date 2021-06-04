@@ -3,15 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c00b214c-5cdc-41b1-b2cf-a2a0adcdedb3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/App/controllers/flightsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/App/controllers/flightsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/App/object/Plane.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/App/object/Plane.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/radar/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/radar/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/radar/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/radar/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/radar/layout/AirportPanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/radar/layout/AirportPanel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/radar/layout/WaitingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/radar/layout/WaitingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/radar/scripts/Airport.js" beforeDir="false" afterPath="$PROJECT_DIR$/radar/scripts/Airport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/radar/scripts/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/radar/scripts/Event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radar/layout/Filter.html" beforeDir="false" afterPath="$PROJECT_DIR$/radar/layout/Filter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radar/layout/PlanePanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/radar/layout/PlanePanel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radar/scripts/Filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/radar/scripts/Filter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/radar/scripts/MapLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/radar/scripts/MapLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radar/scripts/Planes.js" beforeDir="false" afterPath="$PROJECT_DIR$/radar/scripts/Planes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/radar/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/radar/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +70,7 @@
       <workItem from="1622476784151" duration="7287000" />
       <workItem from="1622553766816" duration="26031000" />
       <workItem from="1622640684511" duration="13457000" />
-      <workItem from="1622807711927" duration="12621000" />
+      <workItem from="1622807711927" duration="16915000" />
     </task>
     <servers />
   </component>

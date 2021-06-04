@@ -32,10 +32,9 @@ showPlanePopup = (callsign) => {
 	tmpModal = tagToText("{{callsign}}", tmpModal, Planes[callsign].callsign);
 	tmpModal = tagToText("{{altitude}}", tmpModal, (Planes[callsign].baro_alt === null ? Planes[callsign].geo_altitude : Planes[callsign].baro_alt));
 	tmpModal = tagToText("{{speed}}", tmpModal, Planes[callsign].velocity);
-	if (Planes[callsign].squawk === 7500 || Planes[callsign].squawk === 7600 || Planes[callsign].squawk === 7700)
-		tmpModal = tagToText("{{squawk}}", tmpModal, "<font color='red'>" + Planes[callsign].squawk + "</font>");
-	else
-		tmpModal = tagToText("{{squawk}}", tmpModal, Planes[callsign].squawk);
+	tmpModal = tagToText("{{squawk}}", tmpModal, Planes[callsign].squawk);
+	if (Planes[callsign].squawk !== 7500 && Planes[callsign].squawk !== 7600 && Planes[callsign].squawk !== 7700)
+		tmpModal = tagToText("emergency", tmpModal, "");
 	tmpModal = tagToText("{{heading}}", tmpModal, Planes[callsign].true_track);
 	tmpModal = tagToText("{{longitude}}", tmpModal, Planes[callsign].lon);
 	tmpModal = tagToText("{{latitude}}", tmpModal, Planes[callsign].lat);

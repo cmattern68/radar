@@ -247,3 +247,7 @@ body {
 .reset-zoom-button {
     width: 265px;
 }
+
+.emergency {
+    color: #e74c3c;
+}
