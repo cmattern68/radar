@@ -3,14 +3,21 @@ let AirportsLayers = {};
 const modal = loadPage("layout/AirportPanel.html");
 
 getAirports = () => {
-	loading();
-	setLoadingText("Loading Airports ...");
-	$.get("http://localhost:3030/airports", function(airports, status){
-		airports.forEach(airport => {
-			Airports[airport.icao] = airport;
-			AirportsLayers = addAirportMarker(airport, false, AirportsLayers);
-		});
-		loaded();
+	return new Promise((resolve, reject) => {
+		try {
+			setLoadingText("Connecting to Airport DataHub ...");
+			$.get("http://localhost:3030/airports", function(airports, status){
+				setLoadingText("Connection to Airport DataHub established. Recovering data ...");
+				airports.forEach(airport => {
+					Airports[airport.icao] = airport;
+					AirportsLayers = addAirportMarker(airport, false, AirportsLayers);
+				});
+				setLoadingText("Airport Data recovery complete.");
+				resolve("airport ok");
+			});
+		} catch (e) {
+			reject ("error");
+		}
 	});
 }
 
@@ -37,6 +44,8 @@ showPopup = (icao) => {
 		let tmpModal = modal;
 		if($(".airport-popup").length !== 0)
 			$(".airport-popup").remove();
+		if ($(".plane-popup").length !== 0)
+			$(".plane-popup").remove();
 		tmpModal = tagToText("{{airport}}", tmpModal, arpList[icao].name);
 		tmpModal = tagToText("{{icao}}", tmpModal, arpList[icao].icao);
 		tmpModal = tagToText("{{elevation}}", tmpModal, arpList[icao].elevation);

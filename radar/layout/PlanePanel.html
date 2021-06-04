@@ -1,0 +1,22 @@
+<div class="plane-popup">
+    <button type="button" class="btn-close plane-close" aria-label="Close" style="float: right; padding-top: 2.5em; padding-right: 0.5em;" onclick='closePlanePanel();'></button>
+    <h2>{{callsign}}</h2>
+    <dl class="row">
+        <dt class="col-sm-3">Callsign</dt>
+        <dd class="col-sm-9 callsign">{{callsign}}</dd>
+        <dt class="col-sm-3">Longitude / Latitude</dt>
+        <dd class="col-sm-9 longitude latitude"><a href="#" id="zoomAirport" onclick="zoomOnPos({{longitude}}, {{latitude}}, 10)">{{longitude}} / {{latitude}}</a></dd>
+        <dt class="col-sm-3">Altitude</dt>
+        <dd class="col-sm-9 altitude">{{altitude}} ft.</dd>
+        <dt class="col-sm-3">Speed</dt>
+        <dd class="col-sm-9 speed">{{speed}} kts.</dd>
+        <dt class="col-sm-3">Squawk</dt>
+        <dd class="col-sm-9 squawk">{{squawk}}</dd>
+        <dt class="col-sm-3">Heading</dt>
+        <dd class="col-sm-9 heading">{{heading}} °</dd>
+        <dt class="col-sm-3">Vertical Rate</dt>
+        <dd class="col-sm-9 vertical_rate">{{vertical_rate}} ft/min.</dd>
+        <dt class="col-sm-3">ADS-B State position</dt>
+        <dd class="col-sm-9 adsb_origin">{{adsb_origin}}</dd>
+    </dl>
+</div>

@@ -16,45 +16,68 @@
         <dd class="col-sm-9 atc"><a href="{{atc_href}}" target="_blank">{{live_atc}}</a></dd>
     </dl>
 
-    <h2>Metar</h2>
-    <div class="metar-loading">
-        <dl class="row">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </dl>
-    </div>
-    <div class="metar-hidden">
-        <div class="row">
-            <div class="col text-center">
-                <p class="h5 altimeter">{{altimeter}} {{altimeter_unit}}</p>
-            </div>
-            <div class="col text-center">
-                <p class="h5 temperature">{{temperature}}°C</p>
-            </div>
-            <div class="col text-center">
-                <p class="h5 wind-token">{{direction}}/{{speed}}kts</p>
-                <img src="img/wind-arrow.png" class="img-wind-arrow">
+    <div class="accordion accordion-flush">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Metar
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="metar-loading">
+                        <dl class="row">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="metar-hidden">
+                        <div class="row">
+                            <div class="col text-center">
+                                <p class="h5 altimeter">{{altimeter}} {{altimeter_unit}}</p>
+                            </div>
+                            <div class="col text-center">
+                                <p class="h5 temperature">{{temperature}}°C</p>
+                            </div>
+                            <div class="col text-center">
+                                <p class="h5 wind-token">{{direction}}/{{speed}}kts</p>
+                                <img src="img/wind-arrow.png" class="img-wind-arrow">
+                            </div>
+                        </div>
+                        <dl class="row">
+                            <dt class="col-sm-3">Latest Metar</dt>
+                            <dd class="col-sm-9 metar-token">{{metar}}</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
         </div>
-        <dl class="row">
-            <dt class="col-sm-3">Latest Metar</dt>
-            <dd class="col-sm-9 metar-token">{{metar}}</dd>
-        </dl>
+
+        <div class="accordion-item" id="accordionExample">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    TAF
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="taf-loading">
+                        <dl class="row">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="taf-hidden">
+                        <dl class="row">
+                            <dt class="col-sm-3">Latest Taf</dt>
+                            <dd class="col-sm-9 taf-token">{{taf}}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h2>TAF</h2>
-    <div class="taf-loading">
-        <dl class="row">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </dl>
-    </div>
-    <div class="taf-hidden">
-        <dl class="row">
-            <dt class="col-sm-3">Latest Taf</dt>
-            <dd class="col-sm-9 taf-token">{{taf}}</dd>
-        </dl>
-    </div>
 </div>
